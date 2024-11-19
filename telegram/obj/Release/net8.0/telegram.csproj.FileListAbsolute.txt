@@ -1,0 +1,13 @@
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/bin/Release/net8.0/telegram.deps.json
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/bin/Release/net8.0/telegram.dll
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/bin/Release/net8.0/telegram.pdb
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/obj/Release/net8.0/telegram.csproj.AssemblyReference.cache
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/obj/Release/net8.0/telegram.GeneratedMSBuildEditorConfig.editorconfig
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/obj/Release/net8.0/telegram.AssemblyInfoInputs.cache
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/obj/Release/net8.0/telegram.AssemblyInfo.cs
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/obj/Release/net8.0/telegram.csproj.CoreCompileInputs.cache
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/obj/Release/net8.0/telegram.sourcelink.json
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/obj/Release/net8.0/telegram.dll
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/obj/Release/net8.0/refint/telegram.dll
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/obj/Release/net8.0/telegram.pdb
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/obj/Release/net8.0/ref/telegram.dll
