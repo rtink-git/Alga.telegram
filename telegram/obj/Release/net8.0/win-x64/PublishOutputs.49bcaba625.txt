@@ -1,0 +1,17 @@
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/bin/Release/net8.0/win-x64/publish/telegram.dll
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/bin/Release/net8.0/win-x64/publish/telegram.deps.json
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/bin/Release/net8.0/win-x64/publish/telegram.pdb
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/bin/Release/net8.0/win-x64/publish/Microsoft.Extensions.Configuration.dll
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/bin/Release/net8.0/win-x64/publish/Microsoft.Extensions.Configuration.Abstractions.dll
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/bin/Release/net8.0/win-x64/publish/Microsoft.Extensions.Configuration.Binder.dll
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/bin/Release/net8.0/win-x64/publish/Microsoft.Extensions.DependencyInjection.dll
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/bin/Release/net8.0/win-x64/publish/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/bin/Release/net8.0/win-x64/publish/Microsoft.Extensions.Diagnostics.dll
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/bin/Release/net8.0/win-x64/publish/Microsoft.Extensions.Diagnostics.Abstractions.dll
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/bin/Release/net8.0/win-x64/publish/Microsoft.Extensions.Http.dll
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/bin/Release/net8.0/win-x64/publish/Microsoft.Extensions.Logging.dll
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/bin/Release/net8.0/win-x64/publish/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/bin/Release/net8.0/win-x64/publish/Microsoft.Extensions.Options.dll
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/bin/Release/net8.0/win-x64/publish/Microsoft.Extensions.Options.ConfigurationExtensions.dll
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/bin/Release/net8.0/win-x64/publish/Microsoft.Extensions.Primitives.dll
+/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/bin/Release/net8.0/win-x64/publish/System.Diagnostics.DiagnosticSource.dll
