@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Alga.telegram</id>
+    <version>2.0.0</version>
+    <authors>telegram</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <readme>README.md</readme>
+    <description>Package Description</description>
+    <repository type="git" url="https://github.com/rtink-git/Alga.telegram" />
+    <dependencies>
+      <group targetFramework="net9.0">
+        <dependency id="Microsoft.Extensions.Http" version="9.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging" version="9.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/telegram/telegram/bin/Release/net9.0/telegram.dll" target="lib/net9.0/telegram.dll" />
+    <file src="/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/telegram/telegram/README.md" target="README.md" />
+  </files>
+</package>

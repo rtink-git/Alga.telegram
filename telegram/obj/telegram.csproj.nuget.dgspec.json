@@ -1,31 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/telegram.csproj": {}
+    "/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/telegram/telegram/telegram.csproj": {}
   },
   "projects": {
-    "/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/telegram.csproj": {
-      "version": "1.0.1",
+    "/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/telegram/telegram/telegram.csproj": {
+      "version": "2.0.0",
       "restore": {
-        "projectUniqueName": "/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/telegram.csproj",
+        "projectUniqueName": "/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/telegram/telegram/telegram.csproj",
         "projectName": "Alga.telegram",
-        "projectPath": "/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/telegram.csproj",
+        "projectPath": "/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/telegram/telegram/telegram.csproj",
         "packagesPath": "/Users/aidargalimov/.nuget/packages/",
-        "outputPath": "/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/Alga/telegram/telegram/obj/",
+        "outputPath": "/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/telegram/telegram/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/aidargalimov/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net9.0"
         ],
         "sources": {
           "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {}
           }
         },
@@ -37,12 +37,13 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
-        }
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "dependencies": {
             "Microsoft.Extensions.Http": {
               "target": "Package",
@@ -69,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
