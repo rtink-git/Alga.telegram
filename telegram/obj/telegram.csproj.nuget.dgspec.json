@@ -1,26 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/telegram/telegram/telegram.csproj": {}
+    "/Users/airatgalimov/Documents/Airat/Projects/Alga/Alga.telegram/telegram/telegram.csproj": {}
   },
   "projects": {
-    "/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/telegram/telegram/telegram.csproj": {
-      "version": "2.0.0",
+    "/Users/airatgalimov/Documents/Airat/Projects/Alga/Alga.telegram/telegram/telegram.csproj": {
+      "version": "2.0.2",
       "restore": {
-        "projectUniqueName": "/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/telegram/telegram/telegram.csproj",
+        "projectUniqueName": "/Users/airatgalimov/Documents/Airat/Projects/Alga/Alga.telegram/telegram/telegram.csproj",
         "projectName": "Alga.telegram",
-        "projectPath": "/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/telegram/telegram/telegram.csproj",
-        "packagesPath": "/Users/aidargalimov/.nuget/packages/",
-        "outputPath": "/Users/aidargalimov/Library/Mobile Documents/com~apple~CloudDocs/Airat/Projects/telegram/telegram/obj/",
+        "projectPath": "/Users/airatgalimov/Documents/Airat/Projects/Alga/Alga.telegram/telegram/telegram.csproj",
+        "packagesPath": "/Users/airatgalimov/.nuget/packages/",
+        "outputPath": "/Users/airatgalimov/Documents/Airat/Projects/Alga/Alga.telegram/telegram/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/aidargalimov/.nuget/NuGet/NuGet.Config"
+          "/Users/airatgalimov/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
