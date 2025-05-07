@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
+using System.Text;
 using System.Text.Json;
+using System.Text.Encodings.Web;
 using System.Web;
 
 namespace Alga.telegram;
@@ -66,7 +68,39 @@ public class Api
     /// </summary>
     /// <param name="message">The message object containing text and metadata.</param>
     /// <returns>The raw response from the API as a string, or null if the request fails.</returns>
-    async Task<string?> SendTextMessageAsync(Models.SendM message) => await SendGetRequestAsync<string?>($"{UrlRoot}/sendMessage?chat_id={message.chat}&parse_mode=html&disable_web_page_preview=true&text={HttpUtility.UrlEncode(message.text)}&reply_to_message_id={message.reply_to_msg_id}");
+    //async Task<string?> SendTextMessageAsync(Models.SendM message) => await SendGetRequestAsync<string?>($"{UrlRoot}/sendMessage?chat_id={message.chat}&parse_mode=html&disable_web_page_preview=true&text={HttpUtility.UrlEncode(message.text)}&reply_to_message_id={message.reply_to_msg_id}");
+
+private async Task<string?> SendTextMessageAsync(Models.SendM message)
+{
+    var payload = new Dictionary<string, object?>
+    {
+        ["chat_id"] = message.chat,
+        ["text"] = message.text,
+        ["parse_mode"] = "html",
+        ["disable_web_page_preview"] = true
+    };
+
+    if (message.reply_to_msg_id.HasValue)
+        payload["reply_to_message_id"] = message.reply_to_msg_id;
+
+    if (message.reply_markup != null)
+    {
+        payload["reply_markup"] = message.reply_markup;
+    }
+
+    var options = new JsonSerializerOptions
+    {
+        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+    };
+
+    var content = new StringContent(JsonSerializer.Serialize(payload, options), Encoding.UTF8, "application/json");
+
+    using var client = new HttpClient();
+    var response = await client.PostAsync($"{UrlRoot}/sendMessage", content);
+    return await response.Content.ReadAsStringAsync();
+}
+
 
     /// <summary>
     /// Sends a file message (photo, video, audio) using the Telegram API.
