@@ -1,0 +1,13 @@
+/Users/airatgalimov/Documents/Airat/Projects/Alga/Alga.telegram/telegram/bin/Release/net9.0/win-x64/telegram.deps.json
+/Users/airatgalimov/Documents/Airat/Projects/Alga/Alga.telegram/telegram/bin/Release/net9.0/win-x64/telegram.dll
+/Users/airatgalimov/Documents/Airat/Projects/Alga/Alga.telegram/telegram/bin/Release/net9.0/win-x64/telegram.pdb
+/Users/airatgalimov/Documents/Airat/Projects/Alga/Alga.telegram/telegram/obj/Release/net9.0/win-x64/telegram.csproj.AssemblyReference.cache
+/Users/airatgalimov/Documents/Airat/Projects/Alga/Alga.telegram/telegram/obj/Release/net9.0/win-x64/telegram.GeneratedMSBuildEditorConfig.editorconfig
+/Users/airatgalimov/Documents/Airat/Projects/Alga/Alga.telegram/telegram/obj/Release/net9.0/win-x64/telegram.AssemblyInfoInputs.cache
+/Users/airatgalimov/Documents/Airat/Projects/Alga/Alga.telegram/telegram/obj/Release/net9.0/win-x64/telegram.AssemblyInfo.cs
+/Users/airatgalimov/Documents/Airat/Projects/Alga/Alga.telegram/telegram/obj/Release/net9.0/win-x64/telegram.csproj.CoreCompileInputs.cache
+/Users/airatgalimov/Documents/Airat/Projects/Alga/Alga.telegram/telegram/obj/Release/net9.0/win-x64/telegram.sourcelink.json
+/Users/airatgalimov/Documents/Airat/Projects/Alga/Alga.telegram/telegram/obj/Release/net9.0/win-x64/telegram.dll
+/Users/airatgalimov/Documents/Airat/Projects/Alga/Alga.telegram/telegram/obj/Release/net9.0/win-x64/refint/telegram.dll
+/Users/airatgalimov/Documents/Airat/Projects/Alga/Alga.telegram/telegram/obj/Release/net9.0/win-x64/telegram.pdb
+/Users/airatgalimov/Documents/Airat/Projects/Alga/Alga.telegram/telegram/obj/Release/net9.0/win-x64/ref/telegram.dll

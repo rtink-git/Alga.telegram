@@ -712,7 +712,7 @@
     "/Users/airatgalimov/.nuget/packages/": {}
   },
   "project": {
-    "version": "2.0.2",
+    "version": "2.0.4",
     "restore": {
       "projectUniqueName": "/Users/airatgalimov/Documents/Airat/Projects/Alga/Alga.telegram/telegram/telegram.csproj",
       "projectName": "Alga.telegram",

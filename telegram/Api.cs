@@ -51,16 +51,32 @@ public class Api
     /// <param name="message">The message object containing content and metadata.</param>
     /// <returns>A deserialized <see cref="Models.SendMessageResponseRoot"/> object, or null if the request fails.</returns>
     /// <exception cref="ArgumentException"></exception>
+    // public async Task<Models.SendMessageResponseRoot?> SendMessageAsync(Models.SendM message) {
+    //     var mn = $"{nameof(SendMessageAsync)}()";
+    //     try {
+    //         string? response = message switch {
+    //             { text: not null, file_url: null } => await SendTextMessageAsync(message),
+    //             { file_url: not null } => await SendFileMessageAsync(message),
+    //             _ => throw new ArgumentException($"{mn} Invalid message data")
+    //         };
+    //         return !string.IsNullOrEmpty(response) ? JsonSerializer.Deserialize<Models.SendMessageResponseRoot>(response) : null;
+    //     } catch (Exception ex) { logger?.LogError(ex, $"{mn} Error sending message"); return null; }
+    // }
     public async Task<Models.SendMessageResponseRoot?> SendMessageAsync(Models.SendM message) {
         var mn = $"{nameof(SendMessageAsync)}()";
         try {
+            // Устанавливаем parse_mode по умолчанию, если не указан
+            message.parse_mode = string.IsNullOrEmpty(message.parse_mode) ? "HTML" : message.parse_mode;
+
             string? response = message switch {
                 { text: not null, file_url: null } => await SendTextMessageAsync(message),
                 { file_url: not null } => await SendFileMessageAsync(message),
                 _ => throw new ArgumentException($"{mn} Invalid message data")
             };
+            
             return !string.IsNullOrEmpty(response) ? JsonSerializer.Deserialize<Models.SendMessageResponseRoot>(response) : null;
-        } catch (Exception ex) { logger?.LogError(ex, $"{mn} Error sending message"); return null; }
+        } 
+        catch (Exception ex) { logger?.LogError(ex, $"{mn} Error sending message"); return null; }
     }
 
     /// <summary>
@@ -70,36 +86,38 @@ public class Api
     /// <returns>The raw response from the API as a string, or null if the request fails.</returns>
     //async Task<string?> SendTextMessageAsync(Models.SendM message) => await SendGetRequestAsync<string?>($"{UrlRoot}/sendMessage?chat_id={message.chat}&parse_mode=html&disable_web_page_preview=true&text={HttpUtility.UrlEncode(message.text)}&reply_to_message_id={message.reply_to_msg_id}");
 
-private async Task<string?> SendTextMessageAsync(Models.SendM message)
-{
-    var payload = new Dictionary<string, object?>
+    private async Task<string?> SendTextMessageAsync(Models.SendM message)
     {
-        ["chat_id"] = message.chat,
-        ["text"] = message.text,
-        ["parse_mode"] = "html",
-        ["disable_web_page_preview"] = true
-    };
+        var payload = new Dictionary<string, object?>
+        {
+            ["chat_id"] = message.chat,
+            ["text"] = message.text,
+            ["parse_mode"] = message.parse_mode ?? "HTML", // Используем переданный или HTML по умолчанию
+            ["disable_web_page_preview"] = true,
+        };
 
-    if (message.reply_to_msg_id.HasValue)
-        payload["reply_to_message_id"] = message.reply_to_msg_id;
+        if (message.reply_to_msg_id.HasValue)
+            payload["reply_to_message_id"] = message.reply_to_msg_id;
 
-    if (message.reply_markup != null)
-    {
-        payload["reply_markup"] = message.reply_markup;
+        if (message.reply_markup != null)
+        {
+            payload["reply_markup"] = message.reply_markup;
+        }
+
+        var options = new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+        };
+
+        var seriala = JsonSerializer.Serialize(payload, options);
+        var content = new StringContent(seriala, Encoding.UTF8, "application/json");
+
+        using var client = new HttpClient();
+        var response = await client.PostAsync($"{UrlRoot}/sendMessage", content);
+        return await response.Content.ReadAsStringAsync();
     }
 
-    var options = new JsonSerializerOptions
-    {
-        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-    };
-
-    var content = new StringContent(JsonSerializer.Serialize(payload, options), Encoding.UTF8, "application/json");
-
-    using var client = new HttpClient();
-    var response = await client.PostAsync($"{UrlRoot}/sendMessage", content);
-    return await response.Content.ReadAsStringAsync();
-}
 
 
     /// <summary>
@@ -108,11 +126,14 @@ private async Task<string?> SendTextMessageAsync(Models.SendM message)
     /// <param name="message">The message object containing file URL and metadata.</param>
     /// <returns>The raw response from the API as a string, or null if the request fails.</returns>
     async Task<string?> SendFileMessageAsync(Models.SendM message) {
-        var mn = $"{nameof(SendGetRequestAsync)}()";
+        var mn = $"{nameof(SendFileMessageAsync)}()";
 
-        if(string.IsNullOrEmpty(message.file_url)) { logger?.LogError($"{mn} SendFileMessageAsync() - File url not defined"); return null; }
+        if(string.IsNullOrEmpty(message.file_url)) { 
+            logger?.LogError($"{mn} File url not defined"); 
+            return null; 
+        }
 
-        // Determining the file type (photo, video, audio)
+        // Определение типа файла
         var fileType = Path.GetExtension(message.file_url)?.ToLower() switch
         {
             ".jpg" or ".jpeg" or ".png" => "photo",
@@ -120,33 +141,55 @@ private async Task<string?> SendTextMessageAsync(Models.SendM message)
             ".mp3" or ".wav" => "audio",
             _ => null
         };
-        if (fileType == null) { logger?.LogError("SendFileMessageAsync() - Unsupported file type"); return null;}
+        if (fileType == null) { 
+            logger?.LogError($"{mn} Unsupported file type"); 
+            return null;
+        }
 
-        // Getting the contents of the file as bytes
+        // Получение файла
         byte[]? fileBytes = Uri.IsWellFormedUriString(message.file_url, UriKind.Absolute)
             ? await httpClient.GetByteArrayAsync(message.file_url)
             : File.Exists(message.file_url)
-                ? await File.ReadAllBytesAsync(message.file_url) : null;
-        if (fileBytes == null) { logger?.LogError("SendFileMessageAsync() - Failed to retrieve file bytes."); return null; }
+                ? await File.ReadAllBytesAsync(message.file_url) 
+                : null;
+        if (fileBytes == null) { 
+            logger?.LogError($"{mn} Failed to retrieve file bytes."); 
+            return null; 
+        }
 
-        // Get file name
-        string fileName = Path.GetFileName(message.file_url);
-
-        // Creating the form content
+        // Создание формы
         using var form = new MultipartFormDataContent();
         using var stream = new MemoryStream(fileBytes);
         using var streamContent = new StreamContent(stream);
+        
         streamContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream");
-        streamContent.Headers.ContentDisposition = new System.Net.Http.Headers.ContentDispositionHeaderValue("form-data") { Name = fileType, FileName = fileName };
-        form.Add(streamContent, "file", fileName);
+        streamContent.Headers.ContentDisposition = new System.Net.Http.Headers.ContentDispositionHeaderValue("form-data") { 
+            Name = fileType, 
+            FileName = Path.GetFileName(message.file_url) 
+        };
+        form.Add(streamContent, fileType, Path.GetFileName(message.file_url));
 
-        // Forming a URL
-        string caption = !string.IsNullOrEmpty(message.text) 
-            ? $"&caption={HttpUtility.UrlEncode(message.text)}" 
-            : string.Empty;
-        string action = fileType == "video" ? "sendVideo" : "sendPhoto";
+        // Добавление текста (caption)
+        if (!string.IsNullOrEmpty(message.text)) {
+            form.Add(new StringContent(message.text), "caption");
+            if(message.parse_mode != null) form.Add(new StringContent(message.parse_mode), "parse_mode");
+        }
 
-        return await SendPostRequestAsync<string?>($"{UrlRoot}/{action}?chat_id={message.chat}{caption}", form);
+        // Добавление кнопок (reply_markup), если они есть
+        if (message.reply_markup != null) {
+            string jsonMarkup = JsonSerializer.Serialize(message.reply_markup);
+            form.Add(new StringContent(jsonMarkup), "reply_markup");
+        }
+
+        // Определение метода API
+        string action = fileType switch {
+            "photo" => "sendPhoto",
+            "video" => "sendVideo",
+            "audio" => "sendAudio",
+            _ => throw new NotSupportedException()
+        };
+
+        return await SendPostRequestAsync<string>($"{UrlRoot}/{action}?chat_id={message.chat}", form);
     }
 
     /// <summary>

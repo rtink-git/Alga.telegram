@@ -12,11 +12,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("telegram")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("2.0.2.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("2.0.2+fa1845b5a20c9ad3aff9c05a13907c9e8b49c4ca")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("2.0.4.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("2.0.4+571c1e8515ceef1119385ff3f41d44b8efe4cf94")]
 [assembly: System.Reflection.AssemblyProductAttribute("telegram")]
 [assembly: System.Reflection.AssemblyTitleAttribute("telegram")]
-[assembly: System.Reflection.AssemblyVersionAttribute("2.0.2.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("2.0.4.0")]
 [assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/rtink-git/Alga.telegram")]
 
 // Создано классом WriteCodeFragment MSBuild.

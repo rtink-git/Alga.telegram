@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageId>Alga.telegram</PackageId>
-    <Version>2.0.2</Version>
+    <Version>2.0.4</Version>
     <Author>rtink.git@gmil.com</Author>
     <Product>telegram</Product>
     <PackageReadmeFile>README.md</PackageReadmeFile>
